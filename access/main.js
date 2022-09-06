@@ -45,15 +45,59 @@ function capturaEventoForm (evento) {
         quartoBimestre: quartoBimestre.value
      });
      
-     const media = (parseFloat(primeiroBimestre.value) + parseFloat(segundoBimestre.value) + parseFloat(terceiroBimestre.value) + parseFloat(quartoBimestre.value))/4;
+     const media = (parseFloat(primeiroBimestre.value) + parseFloat(segundoBimestre.value) +
+      parseFloat(terceiroBimestre.value) + parseFloat(quartoBimestre.value))/4;
 
      console.log(notas);
      resultado.innerHTML ='';  
-     const p = document.createElement('p');
-     p.classList.add('paragrafo-resultado')
-     p.innerHTML = `A média é ${media}.`;
-     resultado.appendChild(p);
+     if (media >= 7){
+        const p = document.createElement('p');
+        p.classList.add('paragrafo-aprovado')
+        p.innerHTML = `A média é ${media}. Parabéns, aprovado!`;
+        resultado.appendChild(p);
+     } else {
+        const p = document.createElement('p');
+        p.classList.add('paragrafo-reprovado')
+        p.innerHTML = `A média é ${media}. Tente novamente, você consegue!`;
+        resultado.appendChild(p);
+     }
+     
 
 }
 
 form.addEventListener('submit', capturaEventoForm);
+
+const formlario = document.querySelector('.form_celsius');
+const conversao = document.querySelector('.conversao');
+const conversor = [];
+
+function eventoCaputra(evento){
+    evento.preventDefault();
+    const temperaturaCelsius = document.querySelector('.temperaturaCelsius');
+        conversor.push({
+            temperaturaCelsius: temperaturaCelsius.value
+        });
+
+    const fahrenheit = (parseFloat(temperaturaCelsius.value) * 9/5) + 32;
+
+    console.log(conversor);
+    conversao.innerHTML =''; 
+    if (fahrenheit < 59) {
+        const p = document.createElement('p');
+        p.classList.add('frio')
+        p.innerHTML = `Hoje está fazendo frio, F° ${fahrenheit}. `;
+        conversao.appendChild(p);
+    } else if (fahrenheit  >= 59 && fahrenheit  < 86) {
+        const p = document.createElement('p');
+        p.classList.add('agradavel')
+        p.innerHTML = `Hoje está um clima agradável, F° ${fahrenheit}. `;
+        conversao.appendChild(p);
+    } else {
+        const p = document.createElement('p');
+        p.classList.add('quente')
+        p.innerHTML = `Hoje está muito quente, F° ${fahrenheit}. `;
+        conversao.appendChild(p);
+    }
+}
+
+formlario.addEventListener('submit', eventoCaputra);

@@ -17,18 +17,19 @@ body {
     height: 100vh;
   }
   
-  .page-title {
+  .page-title { 
     color:#ffffff;
     margin: 0 0 5px;
   }
   
-  .page-subtitle {
+  .page-subtitle,.pCelsius {
     color:#ffffff;
     margin-top: 5px;
   }
   
   .page-logo {
     width: 200px;
+    padding-top: 20px;
   }
   
   .alura-logo {
@@ -48,11 +49,108 @@ body {
     width: 400px;
     height: 70vh;
     border-radius: 8px;
+    margin-left: 40px;
     
   }
+  .temperatura-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 80vh;
+  }
 
-  .paragrafo-resultado  {
+  .button_media {
+    margin-top: 20px;
+    height: 25px;
+    border-radius: 4px;
+    background-color: rgba(245, 245, 241, 0.861);
+    color: rgb(5, 5, 0);
+    transition: 0.8s;
+  }
+
+  .button_media:hover{
+    background-color: #1df809;
+    color: #3a7bd5;
+    font-size: 16px;
+    font-weight: bold;
+
+  }
+
+  .button_conversao{
+    margin-top: 20px;
+    height: 25px;
+    border-radius: 4px;
+    background-color: rgba(245, 245, 241, 0.861);
+    color: rgb(5, 5, 0);
+    transition: 0.8s;
+  }
+
+  .button_conversao:hover{
+    background-color: rgb(254, 254, 10);
+    color:red;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .paragrafo-aprovado  {
     font-size: 20px;
     color: #1df809;
     font-weight: bold;
   }
+
+  .paragrafo-reprovado  {
+    font-size: 20px;
+    color: orange;
+    font-weight: bold;
+  }
+
+  .form_celsius {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 60px;
+    background-color: rgba(0, 255, 255, 0.144);
+    width: 400px;
+    height: 40vh;
+    border-radius: 8px;
+  }
+
+.titulo-temperatura {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50vh;
+  flex-direction: column;
+  color:#ffffff
+}
+
+.temperatura-subtitle{
+  margin-top: 5px;
+}
+
+h2 {
+  font-size: 32px;
+  margin: 0 0 5px
+}
+
+.frio  {
+  font-size: 20px;
+  color: #40edfa;
+  font-weight: bold;
+}
+
+.agradavel  {
+  font-size: 20px;
+  color: #1df809;;
+  font-weight: bold;
+  text-align: center  ;
+}
+
+.quente {
+  font-size: 20px;
+  color: orange;
+  font-weight: bold;
+}
